@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "types": [
+      "@dcloudio/types",
+      "miniprogram-api-typings",
+      "mini-types"
+    ],
+
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"],
+      "api/*": ["src/api/*"],
+      "config/*": ["src/config/*"],
+      "static/*": ["src/static/*"],
+      "store/*": ["src/store/*"],
+      "utils/*": ["src/utils/*"],
+      "common/*": ["src/common/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist"]
+}

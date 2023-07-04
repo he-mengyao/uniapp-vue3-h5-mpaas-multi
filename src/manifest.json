@@ -1,0 +1,41 @@
+{
+  "name": "exchange",
+  "version": "1.0.7",
+  "description": "description",
+  "author": "author",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false,
+      "es6": true,
+      "postcss": false,
+      "minified": true,
+      "checkSiteMap": false
+    },
+    "usingComponents": true,
+    "permission": {
+      "scope.userLocation": {
+        "desc": "您的位置将用于定位服务城市"
+      }
+    }
+  },
+  "mp-alipay": {
+    "usingComponents": true,
+    "component2": true,
+    "enableAppxNg": false
+  },
+  "uniStatistics": {
+    "enable": false
+  },
+  "vueVersion": "3",
+  "h5": {
+    "title": "演示",
+    "template": "index.html",
+    "router": {
+        "mode": "history"
+    }
+}
+}
