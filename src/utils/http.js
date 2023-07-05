@@ -4,7 +4,7 @@ import { handleSign } from '@fe/gateway-sign'
 
 const { baseURL, sysCode, secret } = configInfo
 const config = {
-  baseUrl: baseURL,
+  // baseUrl: baseURL,
   header: {
     'Content-Type': 'application/json;charset=UTF-8',
   },
@@ -56,10 +56,10 @@ const interceptor = {
 const request = (options) => {
   return new Promise((resolve, reject) => {
     let _config = null
-    options.url =
-      options.url.indexOf('http') > -1 || options.url.indexOf('https://') > -1
-        ? options.url
-        : baseURL + options.url
+    // options.url =
+    //   options.url.indexOf('http') > -1 || options.url.indexOf('https://') > -1
+    //     ? options.url
+    //     : baseURL + options.url
     options.complete = (response) => {
       let { statusCode, data } = response
       response.config = _config

@@ -33,7 +33,8 @@
     "build-h5:test-dgg": "uni build --platform h5 --outDir dist/build/h5",
     "build-h5:preview-dgg": "uni build --platform h5 --outDir dist/build/h5",
     "build-h5:liantiao-dgg": "uni build --platform h5 --outDir dist/build/h5",
-    "build-h5:production-dgg": "uni build --platform h5 --outDir dist/build/h5"
+    "build-h5:production-dgg": "uni build --platform h5 --outDir dist/build/h5",   
+    "push": "uni build && scp -r dist/* root@110.42.253.240:/www/wwwroot/vue3-shupian"
   },
   "dependencies": {
     "@dcloudio/uni-app": "^3.0.0-alpha-3030420211228003",

@@ -17,6 +17,7 @@
 import { onMounted, ref, getCurrentInstance, inject } from 'vue'
 import initUserInfo from 'utils/initUserInfo'
 import storage from '@/utils/storage'
+import { smsCode } from '@/api/http'
 const _this = getCurrentInstance().appContext.config.globalProperties
 
 const $sp = inject('$sp')
@@ -34,6 +35,12 @@ const click = async () => {
 onMounted(async () => {
   title.value = _this.$platform
   await _this.$onLaunched
+  const res = await smsCode({
+    phone: '13767067367',
+    userType: 'ORDINARY_USER',
+    msgTemplateCode: 'SMS_TMP_USER',
+  })
+  console.log(res, '0000')
   statusBarHeight.value = uni.getSystemInfoSync().statusBarHeight
 })
 </script>

@@ -6,7 +6,7 @@ import path from 'path'
 
 export default defineConfig({
   transpileDependencies: ['@dcloudio/uni-ui'],
-  base: './',
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
@@ -24,4 +24,14 @@ export default defineConfig({
       key: 'APP_SP_ENV',
     }),
   ],
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://tspmicrouag.shupian.cn',
+        changeOrigin: true,
+        ws: true,
+        rewrite: (path) => path.replace('^/api/', ''),
+      },
+    },
+  },
 })
