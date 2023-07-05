@@ -25,12 +25,13 @@ export default defineConfig({
     }),
   ],
   server: {
+    // 本地代理
     proxy: {
       '/api': {
         target: 'https://tspmicrouag.shupian.cn',
         changeOrigin: true,
         ws: true,
-        rewrite: (path) => path.replace('^/api/', ''),
+        rewrite: (path) => path.replace(new RegExp('^/api'), ''),
       },
     },
   },
